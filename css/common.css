@@ -160,9 +160,14 @@ section ul li.section_li.active{z-index: 15;display: block;}
 .p3 .depict{ width: 187px; height: 33px; top:22px; left: 19px;}
 .p3 .depict img{ -webkit-transform:translate(0,36px); width: 100%;}
 section ul li.section_li.p4 .content{background: none; height: 100%; width: 100%;}
-.p4 .title{text-align: center; top: 54px;}
+.p4 .title{text-align: center; top: 54px; height:165px;}
 .p4 .title img{width: 215px; height: 165px;}
-.p4 .content .logo{background-image: url(../images/p4logo.gif); top: 0; right: 0; width: 100%; height: 100%; background-position: center -60px;}
+.p4 .content .logo{background: url(../images/logo.png) no-repeat center center; 
+	height: 74px; width: 100%; background-size:78px 74px;  opacity: 0;
+	position: relative;
+	top: 80px;
+	right: 0;
+}
 
 /*动画*/
 @-webkit-keyframes blink{

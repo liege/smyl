@@ -39,7 +39,7 @@ var flushAnimate = window.flushAnimate = function(window){
 
 	var animate_m = function(){
 		var topV = parseInt($(".section_li").eq(page_v-1).css("top"));
-		var scale=1 - Math.abs((topV-v_h)*0.2/$(window).height());//缩放时的变量
+		var scale=1 || 1 - Math.abs((topV-v_h)*0.2/$(window).height());//缩放时的变量
 		var ta=(topV-v_h)/5;//缩放时固定头部的变量
 		if (p_flag) {//当向下移动
 			console.log('pageN:%d',page_n);
@@ -52,9 +52,9 @@ var flushAnimate = window.flushAnimate = function(window){
 		}
 						
 			if(page_n==10&&page_v==10){return;}
-		$(".section_li").eq(page_n-1).animate({scale: scale,translate:'0,'+ta+'px'},0,'');
+		// $(".section_li").eq(page_n-1).animate({scale: scale,translate:'0,'+ta+'px'},0,'');
 			//展示 的页面
-		$(".section_li").eq(page_v-1).css({'top':topV+t_m-t_i});
+		// $(".section_li").eq(page_v-1).css({'top':topV+t_m-t_i});
 		t_i = t_m;
 	};
 
@@ -114,7 +114,7 @@ var flushAnimate = window.flushAnimate = function(window){
 				taX="-96px"
 
 			//上一页的消失状态
-			$(".section_li").eq(page_n-1).animate({'top':0,scale: 0.8,translate:'0,'+taX},500,'ease')
+			// $(".section_li").eq(page_n-1).animate({'top':0,scale: 0.8,translate:'0,'+taX},500,'ease')
 
 			//当前页自动完成动画
 			$(".section_li").eq(page_v-1).animate({'top':0,scale: 1,translate:'0,0px'},300,"easeOutSine",function(){
@@ -189,13 +189,7 @@ function pageIn(page){
 			slider(1000,$('.p3 .depict img'));
 			break;	
 		case 4:
-		(function(){
-			zoom(0,$('.p4 .map img'),1.2,2000);
-			slider(0,$('.p4 .product'),2000);
-			jumpOut(1800,$('.p4 .honor'))
-			slider(2500,$('.p4 .txt img'));
-			slider(2500,$('.p4 .logo img'));
-		})()
+			fade(1000,$('.p4 .logo'),1);
 			break;												  		
 	}
 }

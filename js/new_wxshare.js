@@ -1,8 +1,8 @@
 window.shareData = {
-        "imgUrl": "http://app.meizhuangyouxuan.com/sekkisei/images/bgz.jpg",
-        "timeLineLink": "http://app.meizhuangyouxuan.com/sekkisei/index.html",
-        "tTitle":"【雪肌精·美白传奇】 从未改变的挚爱" ,
-        "tContent": "这一刻零距离接触！"
+        "imgUrl":"/images/logo.jpg",
+        "timeLineLink": location.href.split('#')[0],
+        "tTitle":"深敏移动医疗" ,
+        "tContent": "深敏移动医疗"
     };
 
     document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
