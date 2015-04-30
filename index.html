@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Cache-Control" content="no-transform " />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=2.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="apple-touch-icon" href="images/wq.jpg"/>
+	<title>深敏医疗</title>    	        	
+</head>
+<body>
+	<section class="section" id="section">
+		<ul>
+			<li class="section_li hide p1">
+				<arction class="content">
+					<div class="sorry"><img src="images/sorry.png" alt=""></div>
+					<div class="title"><img src="images/p1title.png" alt=""></div>
+					<div class="logo"></div>
+					<div class="arrow"><p class="afor_1"></p></div>
+				</arction>
+			</li>
+			<li class="section_li hide p2">
+				<arction class="content">
+					<div class="sorry"><img src="images/sorry.png" alt=""></div>
+					<div class="title"><img src="images/p2title.png" alt=""></div>
+					<div class="depict"><img src="images/p2depict.png" alt=""></div>
+					<div class="logo"></div>									
+					<div class="arrow"><p class="afor_1"></p></div>
+				</arction>					
+			</li>
+			<li class="section_li hide p3">
+				<arction class="content">
+					<div class="sorry"><img src="images/sorry.png" alt=""></div>
+					<div class="title"><img src="images/p3title.png" alt=""></div>
+					<div class="depict"><img src="images/p3depict.png" alt=""></div>
+					<div class="logo"></div>
+					<div class="arrow"><p class="afor_1"></p></div>
+				</arction>
+			</li>
+			<li class="section_li hide p4">
+				<arction class="content">
+					<div class="title"><img src="images/p4title.png" alt=""></div>
+					<div class="logo"></div>
+					<div class="arrow"><p class="afor_1"></p></div>
+				</arction>
+			</li>					
+		</ul>
+	</section>
+	<!--背景音乐-->
+	<div class="music" id="music" >
+		<div class="musicIcon musicStart"></div>
+		<audio id="player" class="player" preload loop="loop" autoplay="autoplay" src="mp3.mp3" sta='play' style='position:absolute'></audio>
+		<span class="note">打开</span>
+	</div>
+	<div id="loading_layer"><span class="loading_box"></span></div>
+	<!--js-->
+	<script type="text/javascript" src='js/zepto.js'></script>
+	<script type="text/javascript" src="js/flushAnimate.js"></script>
+
+	<script type="text/javascript" src='js/new_wxshare.js'></script>
+	<script>
+		//加载完执行
+		window.onload = function(){
+			setTimeout(function(){
+				$('#section li:first-child').removeClass('hide').addClass('show'),5000;
+				$('#loading_layer').hide();
+			},false);
+			setTimeout(function(){
+				pageAnimate();
+
+			},50);
+			flushAnimate();	
+			//代码前提是引用了zepto.js
+			
+			$(document)[0].ontouchstart = function(){
+				if(!window.state){
+					$('.player').attr('sta','play')[0].play();
+				}
+				window.state = true;
+			};	
+		}
+		//声音控制
+		$(".musicIcon").on('click',function(){
+			var Media = document.getElementById("player")
+			if($('.player').attr('sta')=='play'){
+				$('.player').attr('sta','pause');
+				Media.pause();
+				$(this).removeClass('musicStart');
+				$('.note').show()
+				$('.note').html('关闭')
+				setTimeout(function(){
+					$('.note').hide()
+				},1000);
+			}
+			else{
+				$('.player').attr('sta','play');
+				$(this).addClass('musicStart');
+				Media.play();
+				$('.note').show()
+				$('.note').html('打开')
+				setTimeout(function(){
+					$('.note').hide()
+				},2000);
+			}
+		});		
+	</script>
+</body>
+</html>
