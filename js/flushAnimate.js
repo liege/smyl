@@ -114,7 +114,7 @@ var flushAnimate = window.flushAnimate = function(window){
 				taX="-96px"
 
 			//上一页的消失状态
-			// $(".section_li").eq(page_n-1).animate({'top':0,scale: 0.8,translate:'0,'+taX},500,'ease')
+			$(".section_li").eq(page_n-1).animate({'top':0,scale: 0.8,translate:'0,'+taX},500,'ease');
 
 			//当前页自动完成动画
 			$(".section_li").eq(page_v-1).animate({'top':0,scale: 1,translate:'0,0px'},300,"easeOutSine",function(){
